@@ -11,6 +11,10 @@
                     {{ data.description }}
                 </div>
 
+                <div class="pb-6">
+                    <img class="rounded-2xl h-[30vh] w-auto aspect-video object-cover" :src="data.image" alt="">
+                </div>
+
                 <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
 
                     <!-- Publication date if available -->
