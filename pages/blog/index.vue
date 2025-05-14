@@ -1,7 +1,7 @@
 <template>
     <ul>
         <li v-for="(item, index) in data" :key="index">
-            {{ item.title }}
+            <NuxtLink :to="item.path">{{ item.title }}</NuxtLink>
         </li>
     </ul>
 </template>

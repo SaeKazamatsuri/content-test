@@ -1,3 +1,5 @@
 <template>
-    <div class="">home</div>
+    <div class="">
+        <nuxt-link to="/blog">blog</nuxt-link>
+    </div>
 </template>

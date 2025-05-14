@@ -2,7 +2,14 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@nuxthq/studio'],
+  modules: [
+    '@nuxt/content',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxtjs/tailwindcss',
+    '@nuxthq/studio',
+    '@nuxtjs/color-mode',
+  ],
   content: {
     preview: {
       dev: true
@@ -14,5 +21,11 @@ export default defineNuxtConfig({
   devServer: {
     host: '0.0.0.0',
     port: 3000
+  },
+  colorMode: {
+    preference: 'system', // デフォルトはシステム
+    fallback: 'light',
+    classSuffix: '',      // "dark" クラスだけを付与
+    storageKey: 'nuxt-color-mode'
   }
 })

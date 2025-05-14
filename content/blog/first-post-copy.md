@@ -1,5 +1,5 @@
 ---
-title: 最初のブログ記事
+title: 最初のブログ記事のコピー
 description: Nuxt3 Contentを使った最初のブログ記事
 date: 2023-01-01
 author: あなたの名前
@@ -8,6 +8,8 @@ tags:
   - Content
   - ブログ
 ---
+
+<BaseTitle>このセクションのタイトルだよ！</BaseTitle>
 
 # 最初のブログ記事
 
@@ -24,5 +26,3 @@ tags:
 # こんにちは
 
 [こんばんわ](/blog)
-
-[あいおうえ]{.text-red-400}
