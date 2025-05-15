@@ -21,7 +21,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Build job
   build-and-deploy:
     runs-on: ${{ matrix.os }}
     defaults:
@@ -36,6 +35,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install Rust & build tools for oxc-parser
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential curl
+          curl https://sh.rustup.rs -sSf | sh -s -- -y
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
       - name: Identify package manager
         id: pkgman
@@ -58,13 +64,14 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.pkgman.outputs.package_manager }} install
 
+      - name: Run Nuxt prepare
+        run: npx nuxt prepare
+
       - name: Generate
         run: npx nuxi build --preset github_pages
         env:
           NUXT_CONTENT_PREVIEW_API: https://api.nuxt.studio
-          
 
-      # Deployment job
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
