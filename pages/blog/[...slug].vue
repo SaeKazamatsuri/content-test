@@ -93,28 +93,41 @@ const formatDate = (dateString: string) => {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+.blog-content {
+    font-family: 'Quicksand', sans-serif;
+    color: #5a3e36;
+}
+
 .blog-content h1 {
-    @apply text-3xl font-bold my-6 border-b pb-2;
+    @apply text-4xl font-bold my-6 pb-2 border-b-4 border-pink-300 text-pink-600;
 }
 
 .blog-content h2 {
-    @apply text-2xl font-semibold my-5 border-b pb-1;
+    @apply text-3xl font-semibold my-5 pb-1 border-b-2 border-purple-300 text-purple-600;
 }
 
 .blog-content h3 {
-    @apply text-xl font-semibold my-4;
+    @apply text-2xl font-semibold my-4 text-teal-600;
 }
 
 .blog-content p {
-    @apply my-4 leading-relaxed text-gray-800 dark:text-gray-200;
+    @apply my-4 leading-relaxed text-gray-700 dark:text-gray-100;
 }
 
 .blog-content ul {
-    @apply list-disc pl-6 my-4;
+    @apply list-disc pl-6 my-4 text-pink-700;
+}
+.blog-content ul li::marker {
+    color: #f472b6; /* ピンク */
 }
 
 .blog-content ol {
-    @apply list-decimal pl-6 my-4;
+    @apply list-decimal pl-6 my-4 text-purple-700;
+}
+.blog-content ol li::marker {
+    color: #c084fc; /* ラベンダー */
 }
 
 .blog-content li {
@@ -122,26 +135,33 @@ const formatDate = (dateString: string) => {
 }
 
 .blog-content pre {
-    @apply bg-gray-100 dark:bg-gray-800 text-sm p-4 my-6 rounded-lg overflow-auto;
+    @apply bg-pink-100 dark:bg-pink-900 text-sm p-4 my-6 rounded-xl overflow-auto text-pink-900 dark:text-pink-100;
+    border: 2px dashed #f9a8d4;
 }
 
 .blog-content code {
-    @apply bg-gray-200 dark:bg-gray-700 text-pink-600 dark:text-pink-400 rounded;
+    @apply bg-pink-200 dark:bg-pink-800 text-pink-700 dark:text-pink-200 rounded-md font-mono;
 }
 
 .blog-content blockquote {
-    @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-300 my-6;
+    @apply border-l-4 pl-4 italic my-6 text-purple-700 dark:text-purple-300;
+    border-color: #a78bfa;
+    background-color: #f3e8ff;
+    border-radius: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .blog-content table {
-    @apply w-full table-auto my-6 border-collapse;
+    @apply w-full table-auto my-6 border-collapse rounded-xl overflow-hidden shadow-sm;
 }
 
 .blog-content th {
-    @apply border-b text-left p-2 bg-gray-200 dark:bg-gray-700;
+    @apply border-b text-left p-3 bg-pink-200 dark:bg-pink-800 text-pink-800 dark:text-pink-100;
 }
 
 .blog-content td {
-    @apply border-t p-2;
+    @apply border-t p-3 bg-white dark:bg-gray-800;
 }
 </style>
+
