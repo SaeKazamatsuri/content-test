@@ -11,11 +11,8 @@ export default defineNuxtConfig({
     ],
     content: {
         preview: {
-            dev: true
+            api: 'https://api.nuxt.studio'
         }
-    },
-    studio: {
-        enabled: true
     },
     devServer: {
         host: '0.0.0.0',
