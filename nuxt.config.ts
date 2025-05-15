@@ -7,7 +7,6 @@ export default defineNuxtConfig({
         '@nuxt/fonts',
         '@nuxt/icon',
         '@nuxtjs/tailwindcss',
-        '@nuxthq/studio',
         '@nuxtjs/color-mode',
     ],
     content: {

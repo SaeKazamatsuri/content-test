@@ -11,20 +11,16 @@
                     {{ data.description }}
                 </div>
 
-                <div class="pb-6">
-                    <img class="rounded-2xl h-[30vh] w-auto aspect-video object-cover" :src="data.image" alt="">
+                <div v-if="data.image" class="pb-6 flex justify-center">
+                    <img class="rounded-2xl h-[30vh] sm:h-[40vh] md:h-[50vh] w-auto aspect-video object-cover"
+                        :src="data.image" alt="" />
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
 
                     <!-- Publication date if available -->
                     <time v-if="data.date" :datetime="data.date" class="flex items-center gap-1">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                            </path>
-                        </svg>
+                        <Icon name="uil:calendar" />
                         {{ formatDate(data.date) }}
                     </time>
 
@@ -97,16 +93,55 @@ const formatDate = (dateString: string) => {
 </script>
 
 <style>
-/* Additional custom styles for the blog content if needed */
-.blog-content img {
-    @apply rounded-lg my-6;
+.blog-content h1 {
+    @apply text-3xl font-bold my-6 border-b pb-2;
 }
 
-.blog-content a {
-    @apply text-blue-600 dark:text-blue-400 hover:underline;
+.blog-content h2 {
+    @apply text-2xl font-semibold my-5 border-b pb-1;
+}
+
+.blog-content h3 {
+    @apply text-xl font-semibold my-4;
+}
+
+.blog-content p {
+    @apply my-4 leading-relaxed text-gray-800 dark:text-gray-200;
+}
+
+.blog-content ul {
+    @apply list-disc pl-6 my-4;
+}
+
+.blog-content ol {
+    @apply list-decimal pl-6 my-4;
+}
+
+.blog-content li {
+    @apply mb-2;
+}
+
+.blog-content pre {
+    @apply bg-gray-100 dark:bg-gray-800 text-sm p-4 my-6 rounded-lg overflow-auto;
+}
+
+.blog-content code {
+    @apply bg-gray-200 dark:bg-gray-700 text-pink-600 dark:text-pink-400 rounded;
 }
 
 .blog-content blockquote {
-    @apply border-l-4 pl-4 italic text-gray-600 dark:text-gray-300;
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-300 my-6;
+}
+
+.blog-content table {
+    @apply w-full table-auto my-6 border-collapse;
+}
+
+.blog-content th {
+    @apply border-b text-left p-2 bg-gray-200 dark:bg-gray-700;
+}
+
+.blog-content td {
+    @apply border-t p-2;
 }
 </style>
